@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Kdam+Thmor+Pro&family=Kumbh+Sans:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root{
+    --darkwrite: hsl(229, 25%, 31%);
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed' ;
+}
+
+body{
+    background: linear-gradient(to bottom, hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    padding: 5px 15px;
+    position: relative;
+}
+
+/*score board*/
+.scorecont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(94,111,137,255);
+    padding: 20px;
+    border-radius: 8px;
+}
+.scorecont img{
+    width: 90px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 2px 20px;
+    border-radius: 3px;
+}
+#counter{
+    font-size: 2rem;
+    color: var(--darkwrite);
+    font-weight: 700;
+    margin-top: -3px;
+}
+
+/*play board*/
+#play{
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+#rock{
+    grid-column: span 2;
+}
+.paper{
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(to bottom,hsl(230, 89%, 62%), hsl(230, 89%, 50%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.scissors{
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(to bottom,hsl(39, 89%, 49%),hsl(40, 84%, 53%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.rock{
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(to bottom,hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.white img{
+    width: 40px;
+}
+
+/*rules*/
+#rules{
+   position: absolute;
+   right: 50%;
+   transform: translateX(50%);
+   bottom: 30px;
+   border: 2px solid rgba(94,111,137,255);
+   color: white;
+   padding: 7px 40px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+#rulesimage{
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+
+/*bet*/
+#check{
+    display: none;
+    justify-content: center;
+    gap: 15%;
+    margin-top: 150px;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.house{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#check span{
+    color: white;
+    font-weight: 600;
+    margin-top: 15px;
+}
+#darkarea{
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: rgba(22,33,61,255);
+    border-radius: 50%;
+    display: none;
+}
+.winner{
+    box-shadow: 0 0 30px rgb(29, 28, 28),0 0 30px rgb(128, 134, 128),0 0 5px yellow;
+}
+
+
+/*state*/
+#statediv{
+    margin-top: 30px;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+#state{
+    font-size: 50px;
+    font-weight: 600;
+}
+/*again*/
+#again{
+    color: var(--darkwrite);
+    padding: 7px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+}
+#again:hover{
+    color : red;
+}
+
+
+
+.x{
+    width: 110px;
+    height: 110px;
+    background: linear-gradient(to bottom,hsl(230, 89%, 62%), hsl(230, 89%, 50%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.white{
+    background-color: white;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 800px){
+
+    #rules{
+        right: 80px;
+    }
+
+    #check{
+        justify-content: space-around;
+    }
+   #statediv{
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%,-40%);     
+   }
+   #paper {
+    justify-self: end;
+    margin-right: 10%;
+   }
+   #scissors {
+    justify-self: start;
+    margin-left: 10%;
+   }
+}

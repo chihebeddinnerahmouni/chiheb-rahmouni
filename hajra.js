@@ -135,12 +135,6 @@ function whowins(){
 }
 
 
-/* for media querry
- var mediaq = window.matchMedia('(max-width: 800px)');
- if (mediaq.matches) {
-    check.appendChild(statedi);
-}*/
-
 
 
 
